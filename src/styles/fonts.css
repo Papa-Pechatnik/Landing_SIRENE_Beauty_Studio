@@ -1,0 +1,50 @@
+@font-face {
+    font-family: 'Roboto';
+    src:
+        local(""),
+        url("/fonts/roboto/Roboto-Regular.woff2") format("woff2"),
+        url("/fonts/roboto/Roboto-Regular.woff") format("woff");    
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src:
+        local(""),
+        url("/fonts/roboto/Roboto-Medium.woff2") format("woff2"),
+        url("/fonts/roboto/Roboto-Medium.woff") format("woff");    
+    font-weight: 500;
+    font-style: normal;
+    font-display: block;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: 'Sirene-regular';
+    src:
+        url("/fonts/sirene-splited-fonts/Sirene-regular-en.woff2") format("woff2"),
+        url("/fonts/sirene-splited-fonts/Sirene-regular-en.woff") format("woff");    
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+    text-rendering: optimizeLegibility;
+    unicode-range: U+45,U+49,U+4E,U+52,U+53,U+65,U+69,U+6E,U+72,U+73;
+}
+
+
+@font-face {
+    font-family: 'Sirene-bold';
+    src:
+        url("/fonts/sirene-splited-fonts/Sirene-bold-en.woff2") format("woff2"),
+        url("/fonts/sirene-splited-fonts/Sirene-bold-en.woff") format("woff");    
+    font-weight: 700;
+    font-style: normal;
+    font-display: block;
+    text-rendering: optimizeLegibility;
+    unicode-range: U+45,U+49,U+4E,U+52,U+53,U+65,U+69,U+6E,U+72,U+73;
+}
+
+
