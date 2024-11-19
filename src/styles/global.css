@@ -1,0 +1,60 @@
+:root {
+    --color-snow: #FEFFFA;
+    --color-gold: #877032;
+    --color-khaki-dark: #D2B568;
+    --color-black1: #1E1E1E;
+    --color-grey-dark: #B3B3B3;
+
+    
+    --font-Roboto: Roboto, Tahoma, Geneva, Kalimati, sans-serif;
+}
+
+.container {
+    --pad-container: clamp(3.125rem, 1.7857rem + 3.7202vw, 6.25rem);/*576 - 50px 1920px - 100px*/
+    margin-inline: auto;
+    max-width: 1920px;
+    width: 100%;
+    padding-left: var(--pad-container);
+    padding-right: var(--pad-container);
+    /* border: 2px solid red; */
+}
+
+.section {
+    --margin-section-bottom: clamp(6.25rem, 3.3654rem + 8.0128vw, 9.375rem); /*576 - 100px 1200px - 150px*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: clamp(3.125rem, 0.2404rem + 8.0128vw, 6.25rem);
+    margin-bottom: var(--margin-section-bottom);
+}
+
+
+/* всі великі*/
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+/* Перша велика*/
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+h2 {
+    /*576 - 36px 1200px - 48px*/
+font-size: clamp(2.25rem, 1.5577rem + 1.9231vw, 3rem);
+}
+
+h4 {
+        /*576 - 14px 1200px - 24px*/
+font-size: clamp(0.875rem, 0.2981rem + 1.6026vw, 1.5rem);
+}
+
+@media screen and (max-width: 576.98px) {
+.container {
+    /*575 - 49px 390px - 20px*/
+    --pad-container: clamp(1.25rem, -2.5709rem + 15.6757vw, 3.0625rem);
+}
+.section {
+    --margin-section-bottom: clamp(3.125rem, -3.3311rem + 26.4865vw, 6.1875rem); /*576 - 100px 390px - 50px*/
+}
+}

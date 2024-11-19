@@ -1,6 +1,8 @@
 ---
+import "../styles/global.css";
 import Layout from '../layouts/Layout.astro';
 import About from '../components/About.astro';
+import Servises from '../components/Servises.astro';
 
 ---
 
@@ -8,7 +10,11 @@ import About from '../components/About.astro';
     title = "SIRENE | Beauty Studio"
     author = "Design SIRENE 2024 by Olena Beltiukova, web developer by Sopun Yuriy"
     description = "Transform your confidence at SIRENE Beauty Salon in Illinois, specializing in individual eyelash and hair extensions. Experience personalized beauty services that enhance your unique image. Change your look and be unsurpassed!">
-    <About/>
+    
+     <main class="container">
+<!-- <About/> -->
+            <Servises/>
+     </main>
 
 </Layout>
 

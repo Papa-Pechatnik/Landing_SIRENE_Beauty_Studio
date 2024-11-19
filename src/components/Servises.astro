@@ -1,3 +1,135 @@
 ---
+import { Image } from "astro:assets";
+import img1_Local from "../components/assets/images/services/services_img1_eyelash-extensions.jpg";
+import img2_Local from "../components/assets/images/services/services_img2_eyelash-service.jpg";
+import img3_Local from "../components/assets/images/services/services_img3_brows-service.jpg";
+import img4_Local from "../components/assets/images/services/services_img4_hair-extensions.jpg";
+import img5_Local from "../components/assets/images/services/services_img5_manicure.jpg";
+import img6_Local from "../components/assets/images/services/services_img6_pedicure.jpg";
+
+const servisesItem = [
+    {
+        title: "Eyelash extensions",
+        imgPath: img1_Local,
+        href: "#"
+    },
+    {
+        title: "Eyelash service",
+        imgPath: img2_Local,
+        href: "#"
+    },
+    {
+        title: "Brows service",
+        imgPath: img3_Local,
+        href: "#"
+    },
+    {
+        title: "Hair extensions",
+        imgPath: img4_Local,
+        href: "#"
+    },
+    {
+        title: "Manicure",
+        imgPath: img5_Local,
+        href: "#"
+    },
+    {
+        title: "Pedicure",
+        imgPath: img6_Local,
+        href: "#"
+    },
+]
 
 ---
+<section class="servises section">
+    <h2 class="servises-title text-uppercase">
+        services
+    </h2>
+    <ul class="servises-list">
+        {servisesItem.map((item) => (
+            <li class="servises-item">
+                <div class="servises-item__img">
+                    <Image class="servises-item__img-img" 
+                    src={item.imgPath}
+                    width={250} height={250} alt={item.title} />
+                </div>
+                <h4 class="servises-item__title">{item.title}</h4>
+                <a class="servises-item__link" href={item.href}></a>
+            </li>
+        ))}
+    </ul>
+</section>
+
+<style>
+    .servises-list {
+        max-width: 70.375rem;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 258px));
+        justify-content: space-between;
+        justify-items: center;
+        column-gap: 2rem;
+        row-gap: 3.125rem;
+    }
+
+    .servises-item {
+        position: relative;
+    }
+
+    .servises-item__img {
+        max-width: 15.625rem;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        border: 2px solid var(--color-gold);
+        border-radius: 14.1875rem;
+        overflow: hidden;
+    }
+
+    .servises-item__img-img {
+        width: 100%;
+        height: auto;
+        transition: all 0.7s;
+    }
+
+    .servises-item__title {
+        font-family: var(--font-Roboto);
+        font-weight: 400;
+        font-style: normal;
+        text-align: center;
+        color: var(--color-black1);
+        transition: all 0.7s;
+        margin-top: 1rem;
+    }
+
+    .servises-item__link::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .servises-item:hover .servises-item__img-img {
+        transform: scale(1.07);
+    }
+
+    .servises-item:hover .servises-item__title {
+        color: var(--color-khaki-dark);
+    }
+
+    @media screen and (max-width: 991.98px) {
+        .servises-list {
+            justify-content: space-evenly;
+            grid-template-columns: repeat(2, minmax(200px, 258px));
+            grid-template-rows: repeat(3, auto);
+        }
+    }
+
+    @media screen and (max-width: 575.98px) {
+        .servises-list {
+/*Сделать скорее всего слайдер */
+        }
+    }
+</style>
