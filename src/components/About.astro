@@ -1,9 +1,241 @@
 ---
+import { Image } from "astro:assets";
+import img1_local from "./assets/images/about/about-img1.jpg";
+import img2_local from "./assets/images/about/about-img2.jpg";
+import img3_local from "./assets/images/about/about-img3.jpg";
+import img4_local from "./assets/images/about/about-img4.jpg";
 
+const images = [
+    {
+        imgPath: img1_local,
+        alt: "img1",
+    },
+    {
+        imgPath: img2_local,
+        alt: "img2",
+    },
+    {
+        imgPath: img3_local,
+        alt: "img3",
+    },
+    {
+        imgPath: img4_local,
+        alt: "img4",
+    },
+]
+
+const work = [
+        {
+        total: 1000,
+        title: "Happy clients",
+        },
+        {
+        total: 5,
+        title: "Years experience",
+        },
+]
+
+const subtitle = "Hi, I am Yuliia, the expert in eyelash and hair extensions with 5 years experience, is dedicated to creating flawless transformations that boost your confidence and leave you feeling absolutely fabulous. With a personalized approach, I am ensures that every client is treated like royalty, providing a pampered and relaxing experience from start to finish";
 ---
-
+<section class="section">
+    <div class="about">
+        <h2>
+            aBout me
+        </h2>
+        <article class="about-content">
+            <p class="about-subtitle">{subtitle}</p>
+            <ul class="about-grid">
+                {images.map((item, i) =>
+                    <li class={`grid-item item-img item${i+1}`}>
+                        <Image class="item-img__img" src={item.imgPath} width={280} height={400} alt={item.alt}/>
+                    </li>
+                )}
+                <li class="grid-item item-text item5">
+                    {work.map((item) =>
+                         <ul class="work">
+                            <li class="work-total">&#43;&#160;{item.total}</li>
+                            <li class="work-title">{item.title}</li>
+                        </ul>
+                    )}
+                </li>                
+            </ul>
+        </article>
+    </div>
+</section>
 
 
 <style>
+    .about {
+        max-width: 1400px;
+    }
 
+    .about-subtitle {
+        font-weight: 400;
+        font-size: 16px;
+        text-align: center;
+        color: var(--color-gold);
+    }
+
+    .about-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: clamp(1.875rem, 0.7639rem + 2.3148vw, 2.5rem);
+        margin-top: clamp(2.5rem, 1.3889rem + 2.3148vw, 3.125rem);
+    }
+
+
+    .about-grid {
+        max-width: 100%;
+        display: grid;
+        /* grid-template-columns: repeat(2, minmax(1fr, 280px)) repeat(2, minmax(71px, 91px))  repeat(2, minmax(1fr, 280px)); */
+        grid-template-columns: repeat(2, minmax(100px, 1fr)) repeat(2, minmax(71px, 91px)) repeat(2, minmax(100px, 1fr));
+        grid-template-rows: repeat(4, minmax(93px, 1fr));
+        justify-content: center;
+        justify-items: center;
+        column-gap: 18px;
+        row-gap: 10px;
+    }
+
+    .grid-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        border: 2px solid var(--color-gold);
+        border-radius: 50px;
+    }
+
+    .item-img {
+        max-width: 280px;
+        height: 100%;
+        min-width: 200px;
+        aspect-ratio: 280 / 400;
+        overflow: hidden;
+    }
+
+    .item-img__img {
+        max-width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .item-text {
+        min-width: 160px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        row-gap: clamp(2.5rem, 9.4444rem + -9.2593vw, 5rem);
+        /*80px 40px;*/
+        color: var(--color-snow);
+        background-color: var(--color-gold);
+        padding: 26px;
+    }
+
+    .work-total {
+        font-weight: 500;
+        font-size: clamp(2.25rem, 1.3386rem + 1.8987vw, 3rem);
+    }
+
+    .work-title {
+        font-weight: 400;
+        font-size: 24px;
+        margin: 0 20px;
+    }
+
+    .item1 {
+        grid-row: 1 / 5;
+        grid-column: 1;
+    }
+
+    .item2 {
+        grid-row: 1 / 5;
+        grid-column: 2;
+    }
+
+    .item3 {
+        grid-row: 1 / 5;
+        grid-column: 5;
+    }
+
+    .item4 {
+        grid-row: 1 / 5;
+        grid-column: 6;
+    }
+
+    .item5 {
+        grid-row: 1 / 5;
+        grid-column: 3 / 5;
+    }
+
+    @media screen and (max-width: 1199.98px) {
+        .item1 {
+            grid-row: 1 / 3;
+            grid-column: 1 / 3;
+        }
+
+        .item2 {
+            grid-row: 1 / 3;
+            grid-column: 5 / 7;
+        }
+        .item3 {
+            grid-row: 3 / 5;
+            grid-column: 1 / 3;
+        }
+
+        .item4 {
+            grid-row: 3 / 5;
+            grid-column: 5 / 7;
+        }
+
+        .item5 {
+            grid-row: 1 / 5;
+            grid-column: 3 / 5;
+        }
+    }
+
+    @media screen and (max-width: 767.98px) {
+        .about-grid {
+            grid-template-columns: repeat(2, minmax(auto, 250px));
+            grid-template-rows: repeat(3, minmax(93px, auto));
+        }
+
+        .item-img {
+            min-width: 150px;
+        }
+
+        .item-text {
+            flex-direction: row;
+            justify-content: space-between;
+            row-gap: 20px;
+            padding: 20px 10px;
+        }
+
+        .item1 {
+            grid-row: 1;
+            grid-column: 1;
+        }
+
+        .item2 {
+            grid-row: 1;
+            grid-column: 2;
+        }
+
+        .item3 {
+            grid-row: 3;
+            grid-column: 1;
+        }
+
+        .item4 {
+            grid-row: 3;
+            grid-column: 2;
+        }
+
+        .item5 {
+            grid-row: 2;
+            grid-column: 1 / 3;
+        }
+    }
 </style>

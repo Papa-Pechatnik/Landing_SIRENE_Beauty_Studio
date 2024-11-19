@@ -9,6 +9,11 @@
     --font-Roboto: Roboto, Tahoma, Geneva, Kalimati, sans-serif;
 }
 
+body {
+    line-height: 1.15;
+    font-family: var(--font-Roboto);
+}
+
 .container {
     --pad-container: clamp(3.125rem, 1.7857rem + 3.7202vw, 6.25rem);/*576 - 50px 1920px - 100px*/
     margin-inline: auto;
@@ -40,13 +45,16 @@
 }
 
 h2 {
-    /*576 - 36px 1200px - 48px*/
-font-size: clamp(2.25rem, 1.5577rem + 1.9231vw, 3rem);
+    font-weight: 500;
+    font-size: clamp(2.25rem, 1.5577rem + 1.9231vw, 3rem); /*576 - 36px 1200px - 48px*/
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--color-black1);
+    margin: 0;
 }
 
 h4 {
-        /*576 - 14px 1200px - 24px*/
-font-size: clamp(0.875rem, 0.2981rem + 1.6026vw, 1.5rem);
+font-size: clamp(0.875rem, 0.2981rem + 1.6026vw, 1.5rem); /*576 - 14px 1200px - 24px*/
 }
 
 @media screen and (max-width: 576.98px) {
