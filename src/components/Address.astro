@@ -1,0 +1,87 @@
+---
+import Telephone from './elements/Telephone.astro';
+import NavSocialMedia from './NavSocialMedia.astro';
+
+const { class: className} = Astro.props;
+
+interface Color {
+	color: string;
+}
+
+const { color } = Astro.props as Color;
+
+const city = "Illinois";
+const address = "1111 W Dundee Rd Wheeling";
+---
+<address class:list={["address-wrap", className]}>
+    <div class="address" data-color={color}>
+        <strong class="city text-uppercase" aria-label=`city ${city}`>{city}</strong>
+        <p class="street text-capitalize" aria-label="address & street">{address}</p>
+        <Telephone class={className} color = {color} width={50} height={50} />
+    </div>
+    <NavSocialMedia color = {color}/> 
+</address>
+
+<style>
+    .address-wrap {
+        max-width: var(--width-contacts);
+        width: 100%;
+    }
+
+    .address {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        font-style: normal;
+    }
+
+    .city {
+        font-weight: 500;
+        font-size: clamp(1.25rem, 0.5577rem + 1.9231vw, 2rem); /*576 - 20; 1200-32 */
+        font-style: normal;
+    }
+
+    .contacts-address .address {
+        row-gap: clamp(1.125rem, 0.4327rem + 1.9231vw, 1.875rem); /*576 - 18; 1200-30 */
+        margin-bottom: clamp(1.875rem, -0.4327rem + 6.4103vw, 4.375rem); /*576 - 30; 1200-70 */
+    }
+
+    /* style footer */
+    .footer-address {
+        min-width: 220px;
+        grid-row-start: 1;
+        grid-column-start: 3;
+
+        grid-row-end: 3;
+        grid-column-end: 4;
+    }
+
+    .footer-address .address {
+        row-gap: clamp(1.875rem, 4.2788rem + -3.2051vw, 3.125rem); /*576 - 50; 1200-30 */
+        margin-bottom: clamp(3.125rem, -0.0481rem + 8.8141vw, 6.5625rem); /*576 - 50; 1200-105 */
+    }
+
+    .footer-address .street {
+        font-weight: 400;
+        font-size: clamp(0.75rem, 0.0577rem + 1.9231vw, 1.25rem); /*576 - 12; 992-20 */
+    }
+
+    @media screen and (max-width: 575.98px) {
+        .contacts-address .address {
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* style footer */
+        .footer-address {
+            max-width: 220px;
+            min-width: 180px;
+            grid-row: 2 / 3;
+            grid-column: 1 / 3;
+        }
+
+        .footer-address .street {
+            font-weight: 500;
+        }
+    }
+</style>

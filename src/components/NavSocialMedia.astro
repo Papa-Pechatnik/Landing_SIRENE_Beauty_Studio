@@ -1,0 +1,58 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Color {
+	color: string;
+}
+const { color } = Astro.props as Color;
+
+---
+
+<nav class="nav-media-social" aria-label="navigation media social">
+    <ul class="media-social">
+        <li class="social-item" >
+            <a href="#" data-color={color}>
+                <Icon class="social-icon"  name="telegram" width={58} height={58} />
+            </a>
+        </li>
+        <li class="social-item" >
+            <a href="#" data-color={color}>
+                <Icon class="social-icon"  name="whatsapp" width={58} height={58} />
+            </a>
+        </li>
+        <li class="social-item">
+            <a href="#" data-color={color}>
+                <Icon class="social-icon" name="viber" width={58} height={58} />
+            </a>
+        </li>
+        <li class="social-item">
+            <a href="#" data-color={color}>
+                <Icon class="social-icon" name="instagram" width={58} height={58} />
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<style>
+    .media-social {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .social-icon {
+        width: clamp(2.25rem, 0.9808rem + 3.5256vw, 3.625rem); /*576 - 36; 1200-58 */
+        height: auto;
+        transition: color 0.7s;
+    }
+
+    [data-color="white"] .social-icon:is(:hover, :focus) {
+        color: var(--color-khaki-dark);
+    }
+
+    [data-color="black"] .social-icon:is(:hover, :focus) {
+        color: red;
+    }
+
+    @media screen and (max-width: 575.98px) {
+    }
+</style>

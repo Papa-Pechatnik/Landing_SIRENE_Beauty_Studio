@@ -1,18 +1,23 @@
 :root {
     --color-snow: #FEFFFA;
+    
     --color-gold: #877032;
     --color-khaki-dark: #D2B568;
     --color-black1: #1E1E1E;
     --color-grey-dark: #B3B3B3;
 
+    --color-logoW: #f5f5f5;
+    --color-logoB: var(--color-black1);
     
     --font-Roboto: Roboto, Tahoma, Geneva, Kalimati, sans-serif;
+    --width-contacts: 340px;
 }
 
 body {
     margin-inline: auto;
     line-height: 1.15;
     font-family: var(--font-Roboto);
+    font-style: normal;
 }
 
 ul {
@@ -25,9 +30,9 @@ h2, p {
     margin: 0;
 }
 .container {
-    --pad-container: clamp(1.125rem, -2.0893rem + 8.9286vw, 8.625rem);/*576 - 18px 1920px - 100px*/
+    --pad-container: clamp(1rem, -3.8462rem + 13.4615vw, 6.25rem);/*576 - 18px 1920px - 100px*/
     margin-inline: auto;
-    max-width: 1720px;
+    max-width: 1920px;
     padding-left: var(--pad-container);
     padding-right: var(--pad-container);
     /* border: 2px solid red; */
@@ -39,7 +44,7 @@ h2, p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: clamp(1.875rem, 0.7212rem + 3.2051vw, 3.125rem); /*576 - 30px 1200px - 50px*/
+    row-gap: clamp(1.875rem, -2.1635rem + 11.2179vw, 6.25rem);; /*576 - 30px 1200px - 100px*/
     margin-bottom: var(--margin-section-bottom);
 }
 
@@ -54,24 +59,27 @@ h2, p {
     text-transform: capitalize;
 }
 
-h2 {
+.font-size_2 {
     font-weight: 500;
     font-size: clamp(1.5rem, 0.1154rem + 3.8462vw, 3rem); /*576 - 24px 1200px - 48px*/
-    text-transform: uppercase;
+}
+
+.font-size_4 {
+    font-weight: 400;
+    font-size: clamp(0.875rem, 0.2981rem + 1.6026vw, 1.5rem); /*576 - 14px 1200px - 24px*/
+}
+
+.title {
     text-align: center;
     color: var(--color-black1);
 }
 
-h4 {
-font-size: clamp(0.875rem, 0.2981rem + 1.6026vw, 1.5rem); /*576 - 14px 1200px - 24px*/
+[data-color="white"] {
+    color: var(--color-logoW);
 }
 
-@media screen and (max-width: 576.98px) {
-.container {
-    /*575 - 49px 390px - 20px*/
-    --pad-container: clamp(1.25rem, -2.5709rem + 15.6757vw, 3.0625rem);
+[data-color="black"] {
+    color: var(--color-logoB);
 }
-.section {
-    --margin-section-bottom: clamp(3.125rem, -3.3311rem + 26.4865vw, 6.1875rem); /*576 - 100px 390px - 50px*/
-}
-}
+
+

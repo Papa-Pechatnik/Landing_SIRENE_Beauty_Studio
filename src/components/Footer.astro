@@ -1,0 +1,94 @@
+---
+import Logo from "../components/elements/Logo.astro";
+import Address from "../components/Address.astro";
+import Navigation from "../components/Navigation.astro";
+
+const DesignLink = "https://www.linkedin.com/in/olena-beltiukova-9b63042aa?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app";
+const TestedLink = "https://www.linkedin.com/in/ievgeniia-sheigus?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app";
+const DevLink = "https://www.linkedin.com/in/yurii-sopun-354213241/";
+const color = "white";
+---
+<footer class="footer">
+    <div class="container">
+        <div class="footer-wrap">
+            <Logo class="footer-logo" color={color} />
+            <Navigation class="nav-footer" color={color} />
+            <Address class="footer-address" color={color} />
+        </div>
+        <article class="copyright">
+            <strong class="copyright-item">
+                Design <span class="text-uppercase">SIRENE 2024</span> by
+                <a class="text-capitalize" href={DesignLink}>Olena Beltiukova</a>,
+            </strong>
+            <strong class="copyright-item">
+                developed by
+                <a class="text-capitalize" href={DevLink}>Yuriy Sopun</a>,
+            </strong>
+            <strong class="copyright-item">
+                tested by
+                <a class="text-capitalize" href={TestedLink}>Ievgeniia Sheigus</a>
+            </strong>
+        </article>
+    </div>
+</footer>
+<style>
+    .footer {
+        --padding-footer: clamp(1.875rem, 0.1442rem + 4.8077vw, 3.75rem);/*576 - 30px 1200px - 60px*/
+        max-width: 100%;
+        width: 100%;
+        background: var(--color-black1);
+        padding: var(--padding-footer) 0;
+    }
+
+    .footer-wrap {
+        max-width: inherit;
+        width: inherit;
+        display: grid;
+        /* grid-template-columns: repeat(3, minmax(auto, 1fr)); */
+        grid-template-columns: minmax(220px, max-content) minmax(max-content) minmax(220px, 340px);
+        grid-template-rows: repeat(2, auto);
+        justify-content: space-between;
+        /* justify-items: center; */
+        column-gap: 16px;
+        margin: 0 clamp(0rem, -30rem + 30vw, 6rem);/*992 - 18px 1200px - 96px*/
+    }
+
+    .copyright {
+        margin-top: 1rem;
+        text-wrap: balance;
+    }
+
+    .copyright-item {
+        color: var(--color-snow);
+        font-family: var(--font-Roboto);
+        font-weight: 400;
+        font-size: clamp(0.5rem, -0.1923rem + 1.9231vw, 1rem);/*992-16 576 - 8 */
+        text-wrap: nowrap;
+    }
+
+    .copyright-item a {
+        font-family: inherit;
+        font-weight: inherit;
+        font-size: inherit;
+        text-decoration: underline;
+        color: var(--color-logoW);
+        transition: color 0.7s;
+    }
+
+    .copyright-item a:is(:hover, :focus) {
+        color: var(--color-khaki-dark);
+        
+    }
+
+    @media screen and (max-width: 575.98px) {
+        .footer-wrap {
+            justify-content: space-around;
+            justify-items: center;
+            row-gap: 50px;
+        }
+
+        .copyright {
+            text-align: center;
+        }
+    }
+</style>

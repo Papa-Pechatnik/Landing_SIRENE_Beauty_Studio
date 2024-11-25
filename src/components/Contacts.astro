@@ -1,0 +1,113 @@
+---
+import { Picture } from 'astro:assets';
+import Address from "../components/Address.astro";
+import imgLocation from "./assets/images/interior/interior_img10.jpg";
+
+---
+
+<section class="section">
+    <h2 class="font-size_2 title text-uppercase">contacts & location</h2>
+    <div class="contacts-wrap">
+        <section class="contacts">
+            <div class="contacts-box">
+                <h3 class="contacts-title font-size_4">
+                    Book your appointment today and get ready to glam up
+                </h3>
+                <Address/>
+                <button type="button">book</button>
+            </div>
+        </section>
+        <div class="contacts-img">
+            <Picture class="contacts-img__img" src={imgLocation} formats={["avif", "webp" ]} widths={[320, 758]}
+                sizes={`(max-width: 390px) 320px, (min-width: 576px) 758px`} fallbackFormat="jpeg" width={758}
+                height={656} alt="interior" />
+        </div>
+    </div>
+</section>
+
+<style>
+    .contacts-wrap {
+        max-width: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        gap: 18px;
+    }
+
+    .contacts {
+        flex: 0 1 664px;
+    }
+
+    .contacts-box {
+        max-width: var(--width-contacts);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        row-gap: clamp(1.875rem, 0.6058rem + 3.5256vw, 3.25rem);/*576 - 30; 1200-52 */
+    }
+
+    .contacts-title {
+        color: var(--color-gold);
+        text-wrap: balance;
+    }
+
+    .contacts-img {
+        flex: 0 1 758px;
+        max-width: 758px;
+        min-width: 260px;
+        aspect-ratio: 758 / 656;
+    }
+
+    .contacts-img__img {
+        max-width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: 2px solid var(--color-gold);
+        border-radius: clamp(3.125rem, -2.6442rem + 16.0256vw, 9.375rem);/*576 - 60; 1200-150 */
+    }
+
+    @media screen and (max-width: 575.98px) {
+        .contacts-wrap {
+            position: relative;
+            justify-content: center;
+        }
+
+        .contacts {
+            max-width: inherit;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .contacts-box {
+            z-index:0;
+            max-width: inherit;
+            width: max(270px, 70%);
+            text-align: center;
+            padding: 30px;
+            border-radius: 50px;
+            border: 1px solid var(--color-gold);
+            backdrop-filter: blur(12.62px);
+            background: rgba(253, 253, 253, 0.4);
+        }
+
+        .contacts-img {
+            max-width: 100%;
+            min-height: 400px;
+            aspect-ratio: 380 / 430;
+            /* width: 100%; */
+        }
+
+        .address {
+        justify-content: center;
+        align-items:center;
+    }
+
+    }
+</style>
