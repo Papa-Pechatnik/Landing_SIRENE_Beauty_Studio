@@ -12,8 +12,11 @@ const color = "white";
     <div class="container">
         <div class="footer-wrap">
             <Logo class="footer-logo" color={color} />
-            <Navigation class="nav-footer" color={color} />
-            <Address class="footer-address" color={color} />
+            <div class="footer-wrap__wrap">
+            <Navigation class="footer-nav" color={color} />
+            <Address class="footer-address" color={color} />                
+            </div>
+
         </div>
         <article class="copyright">
             <strong class="copyright-item">
@@ -34,6 +37,7 @@ const color = "white";
 <style>
     .footer {
         --padding-footer: clamp(1.875rem, 0.1442rem + 4.8077vw, 3.75rem);/*576 - 30px 1200px - 60px*/
+        --margin-footer: clamp(0rem, -30rem + 30vw, 6rem);/*992 - 18px 1200px - 96px*/
         max-width: 100%;
         width: 100%;
         background: var(--color-black1);
@@ -43,17 +47,22 @@ const color = "white";
     .footer-wrap {
         max-width: inherit;
         width: inherit;
-        display: grid;
-        /* grid-template-columns: repeat(3, minmax(auto, 1fr)); */
-        grid-template-columns: minmax(220px, max-content) minmax(max-content) minmax(220px, 340px);
-        grid-template-rows: repeat(2, auto);
+        display: flex;
         justify-content: space-between;
-        /* justify-items: center; */
-        column-gap: 16px;
-        margin: 0 clamp(0rem, -30rem + 30vw, 6rem);/*992 - 18px 1200px - 96px*/
+        align-items: start;
+        column-gap: var(--flex-gap-min);
+        margin: 0 var(--margin-footer);
+    }
+
+    .footer-wrap__wrap {
+        flex: 0 1 56%;    
+        display: flex;
+        justify-content: space-between;
+        column-gap: calc( 2* var(--flex-gap-min));
     }
 
     .copyright {
+        margin: 0 var(--margin-footer);    
         margin-top: 1rem;
         text-wrap: balance;
     }
@@ -79,12 +88,23 @@ const color = "white";
         color: var(--color-khaki-dark);
         
     }
+    @media screen and (max-width: 767.98px)
+    {
+        .footer-wrap {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 50px;
+    }
+    .footer-wrap__wrap {
+        flex-direction: row-reverse;
+        max-width: 90%;
+        width: 100%;
+    }
+}
 
     @media screen and (max-width: 575.98px) {
-        .footer-wrap {
-            justify-content: space-around;
-            justify-items: center;
-            row-gap: 50px;
+        .footer-wrap__wrap {
+            max-width: 100%;
         }
 
         .copyright {

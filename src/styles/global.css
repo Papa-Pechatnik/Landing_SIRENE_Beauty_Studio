@@ -11,10 +11,11 @@
     
     --font-Roboto: Roboto, Tahoma, Geneva, Kalimati, sans-serif;
     --width-contacts: 340px;
+    --flex-gap-min: 1rem;
 }
 
 body {
-    margin-inline: auto;
+    margin: 0 auto;
     line-height: 1.15;
     font-family: var(--font-Roboto);
     font-style: normal;

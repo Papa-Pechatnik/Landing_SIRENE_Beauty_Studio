@@ -1,8 +1,10 @@
 ---
 import { Picture } from 'astro:assets';
 import Address from "../components/Address.astro";
+import ButtonBookNow from './elements/ButtonBookNow.astro';
 import imgLocation from "./assets/images/interior/interior_img10.jpg";
 
+const color = "black";
 ---
 
 <section class="section">
@@ -13,8 +15,8 @@ import imgLocation from "./assets/images/interior/interior_img10.jpg";
                 <h3 class="contacts-title font-size_4">
                     Book your appointment today and get ready to glam up
                 </h3>
-                <Address/>
-                <button type="button">book</button>
+                <Address class="contacts-address" color={color} />  
+                <ButtonBookNow/>
             </div>
         </section>
         <div class="contacts-img">
@@ -31,7 +33,7 @@ import imgLocation from "./assets/images/interior/interior_img10.jpg";
         width: 100%;
         display: flex;
         justify-content: space-evenly;
-        gap: 18px;
+        gap: calc(2 * var(--flex-gap-min));
     }
 
     .contacts {
@@ -87,6 +89,7 @@ import imgLocation from "./assets/images/interior/interior_img10.jpg";
 
         .contacts-box {
             z-index:0;
+            align-items: center;
             max-width: inherit;
             width: max(270px, 70%);
             text-align: center;
