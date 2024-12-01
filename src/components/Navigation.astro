@@ -45,18 +45,18 @@ const NavLinks = [
 
         if (background || hamburger || menuOverlay) {  
             const toggleClasses = () => {  
-            background.classList.toggle('open');  
-            hamburger.classList.toggle('open');  
-            menuOverlay.classList.toggle('open');  
-        };  
+                background.classList.toggle('open');  
+                hamburger.classList.toggle('open');  
+                menuOverlay.classList.toggle('open');  
+            };  
 
-        hamburger.addEventListener('click', toggleClasses);  
-        background.addEventListener('click', toggleClasses);  
+            hamburger.addEventListener('click', toggleClasses);  
+            background.addEventListener('click', toggleClasses);  
 
-        itemLinks.forEach((link) => {  
-            link.addEventListener('click', toggleClasses);  
-        });  
-    }  
+            itemLinks.forEach((link) => {  
+                link.addEventListener('click', toggleClasses);  
+            });  
+        }  
     }); 
 </script>
 
