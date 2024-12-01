@@ -1,5 +1,5 @@
 ---
-import { Icon } from 'astro-icon/components'
+import { Icon } from 'astro-icon/components';
 
 const { class: className} = Astro.props;
 
@@ -10,12 +10,10 @@ interface Color {
 const { color } = Astro.props as Color;
 
 interface Icons {
-	width: number;
-	height: number;
+	width?: number;
+	height?: number;
 }
 const { width, height} = Astro.props as Icons;
-
-
 
 const tel = 8476710065;
 ---
@@ -36,8 +34,43 @@ const tel = 8476710065;
         /* gap: 20px; */
     }
 
+    .tel p {
+        text-wrap: nowrap;
+    }
+
     .tel:is(:hover, :focus) {
         color: var(--color-khaki-dark);
+    }
+
+    [data-icon="phone"] {
+        height: auto;
+    }
+
+    .header-nav [data-icon="phone"] {
+        display: none;
+    }
+
+    .header-nav {
+        font-weight: 700;
+        font-size: clamp(0.875rem, 0.6536rem + 0.4619vw, 1rem); /* 1200-16; 767 - 14*/
+        color: var(--color-logoW);
+        background-color: var(--color-gold);
+        padding: clamp(0.5rem, -0.3857rem + 1.8476vw, 1rem) clamp(1.125rem, -0.8678rem + 4.157vw, 2.25rem); /* 1200-16; 767 - 8*/ /* 1200-36; 767 - 18*/
+        border-radius: clamp(1rem, -0.5499rem + 3.2333vw, 1.875rem); /* 1200-30; 767 - 16*/
+        transition: background-color 0.7s;
+    }
+
+    .header-nav:is(:hover, :focus) {
+        color: var(--color-logoW);
+        background-color: var(--color-khaki-dark);
+    }
+
+    .contacts-address {
+        column-gap: 20px;
+    }
+
+    .contacts-address [data-icon="phone"] {
+        width: clamp(1.625rem, 0.2404rem + 3.8462vw, 3.125rem);
     }
 
     .footer-address {
@@ -46,18 +79,16 @@ const tel = 8476710065;
     }
 
     .footer-address [data-icon="phone"] {
-        width: clamp(1.375rem, 0.1635rem + 3.3654vw, 2.25rem);
-        /* 992-24; 576 - 16*/
-    }
-    .contacts-address {
-        column-gap: 20px;
+        width: clamp(1.375rem, 0.1635rem + 3.3654vw, 2.25rem);/* 992-24; 576 - 16*/
     }
 
-    .contacts-address [data-icon="phone"] {
-        width: clamp(1.625rem, 0.2404rem + 3.8462vw, 3.125rem);
-        height: auto;
-    }
+
     @media screen and (max-width: 575.98px) {
+
+        .header-nav {
+font-weight: 500;
+font-size: 10px;
+        }
         .footer-address {
             font-weight: 500;
             column-gap: 10px;
@@ -66,7 +97,7 @@ const tel = 8476710065;
         }
 
         .contacts-address {
-        column-gap: 12px;
-    }
+            column-gap: 12px;
+        }
     }
 </style>

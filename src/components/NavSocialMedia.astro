@@ -6,12 +6,15 @@ interface Color {
 }
 const { color } = Astro.props as Color;
 
+const telegramLink = "https://t.me/juli_zag";
+const instaLink = "https://www.instagram.com/_sirenebeauty?igsh=ZzhxbDNzcjUwdm5n";
+
 ---
 
 <nav class="nav-media-social" aria-label="navigation media social">
     <ul class="media-social">
         <li class="social-item" >
-            <a href="#" data-color={color}>
+            <a href={telegramLink} data-color={color}>
                 <Icon class="social-icon"  name="telegram" width={58} height={58} />
             </a>
         </li>
@@ -26,7 +29,7 @@ const { color } = Astro.props as Color;
             </a>
         </li>
         <li class="social-item">
-            <a href="#" data-color={color}>
+            <a href={instaLink} data-color={color}>
                 <Icon class="social-icon" name="instagram" width={58} height={58} />
             </a>
         </li>
