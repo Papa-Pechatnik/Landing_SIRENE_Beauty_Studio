@@ -1,5 +1,4 @@
 ---
-
 ---
 
 <section id="price" class="section section--gap">
@@ -8,7 +7,9 @@
   </div>
 </section>
 <script>
-  let pricelist = "../components/assets/price-list/price-list.json";
+  // let pricelist = "../components/assets/price-list/price-list.json";
+  let pricelist = "/price-list/price-list.json";
+  // console.log("Извлечение из:", window.location.href + pricelist);
   fetch(pricelist)
     .then((response) => {
       if (!response.ok) {
