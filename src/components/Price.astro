@@ -1,6 +1,157 @@
 ---
 
 ---
-<section id="price">
 
+<section id="price" class="section section--gap">
+  <h2 class="price-title text-uppercase font-size_2 title">Price list</h2>
+  <div class="price-box" aria-label="price-list">
+  </div>
 </section>
+<script>
+  let pricelist = "/src/components/assets/price-list/price-list.json";
+  fetch(pricelist)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("File not found" + response.status);
+      }
+      return response.json();
+    })
+    .then((jsonData) => {
+      let pricebox = document.querySelector(".price-box");
+      console.log(pricebox);
+      for (let i = 0; i < jsonData.length; i++) {
+        console.log(jsonData[i].id);
+        // создали секцию
+        const section = document.createElement("section");
+        section.classList.add("price-box__item", `box-id${i}`);
+        // создали h3 со span
+        const title = document.createElement("h3");
+        title.classList.add("price-box__title", "font-size_3", "text-capitalize", "title--gold");
+        title.textContent = jsonData[i].title;
+
+        const arrow = document.createElement("span");
+        arrow.classList.add("price-box__title-arrow");
+        arrow.setAttribute("aria-hidden", "true");
+        arrow.innerHTML = "&#9660;";
+
+        // создали dl и для него ...
+        const dl = document.createElement("dl");
+        dl.classList.add("price-list");
+
+        const servicesNumber = jsonData[i].services.length;
+        for (let j = 0; j < servicesNumber; j++) {
+          let div = document.createElement("div");
+          div.classList.add("price-item");
+
+          const services = jsonData[i].services[j];
+          const dt = document.createElement("dt");
+          dt.classList.add("price-item__name");
+          dt.textContent = services.name;
+
+          const dd = document.createElement("dd");
+          dd.classList.add("price-item__cost");
+
+          const ul = document.createElement("ul");
+          ul.classList.add("cost");
+
+          const currency = document.createElement("li");
+          currency.classList.add("cost__currency");
+          currency.innerHTML = "&#36;";
+
+          const price = document.createElement("li");
+          price.classList.add("cost__price");
+          price.textContent = services.cost.price;
+
+          // собираем секцию
+          dl.appendChild(div);
+          div.append(dt, dd);
+          dd.appendChild(ul);
+          ul.append(currency, price);
+
+          const keys = Object.keys(services.cost);
+          const costNumber =  keys.length;
+          if (costNumber > 1) {
+            const specification = document.createElement("li");
+            specification.classList.add("cost__specification");
+            ul.appendChild(specification);
+            specification.innerHTML = "&ensp;";
+
+            for (let i = 1; i < costNumber; i++) {
+              const span = document.createElement("span");
+              if (keys[i] == "weight") {
+                span.innerHTML = "/ " + services.cost[keys[i]] + "g";
+              } else {
+                span.innerHTML = services.cost[keys[i]];
+              }
+              specification.appendChild(span);
+            }
+          }
+        }
+        title.appendChild(arrow);
+        section.append(title, dl);
+        pricebox.appendChild(section);
+      }
+    })
+    .catch((error) => {
+      console.error("Error loading or processing JSON:", error);
+    });
+</script>
+
+<style>
+  .price-title  {
+    margin-bottom: 28px;
+  }
+  .price-box {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(310px, 340px));
+    grid-template-rows: repeat(3, auto);
+    justify-content: space-between;
+    /* align-items: stretch; */
+    row-gap: 40px;
+    column-gap: 20px; /* посчитать нужно */
+    grid-template-areas: 
+    "box-id0 box-id1 box-id3 box-id4"
+    "box-id0 box-id1 box-id2 box-id4"
+    "box-id5 box-id6 box-id7 box-id8"
+  }
+  @media screen and (max-width: 1440px) {
+  .price-box {
+    grid-template-columns: repeat(3, minmax(310px, 340px));
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: 
+    "box-id0 box-id1 box-id3"
+    "box-id0 box-id1 box-id2"
+    "box-id4 box-id5 box-id6"
+    "box-id7 box-id8 ."; 
+  }    
+  }
+
+  @media screen and (max-width: 1040px) {
+  .price-box {
+    grid-template-columns: repeat(2, minmax(310px, 340px));
+    grid-template-rows: repeat(5, auto);
+    justify-content: space-around;
+    grid-template-areas: 
+    "box-id0 box-id1"
+    "box-id3 box-id4"
+    "box-id2 box-id4"
+    "box-id5 box-id6"
+    "box-id7 box-id8";
+  }    
+  }
+
+  @media screen and (max-width: 700px) {
+  .price-box {
+    grid-template-columns: repeat(1, minmax(310px, 340px));
+    grid-template-rows: repeat(9, auto);/*50px */
+    row-gap: 0;
+    justify-content: center;
+    grid-template-areas: 
+    "box-id0" "box-id1" "box-id2" "box-id3" "box-id4" "box-id5" "box-id6" "box-id7" "box-id8";
+  }    
+  }
+
+
+  
+</style>

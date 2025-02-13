@@ -1,241 +1,332 @@
 [
-    {
-      "id": 1,
-      "title": "Eyelash Extensions",
-      "services": [
-        {
-          "name": "Classic set",
-          "price": 135
-        },
-        {
-          "name": "Mega classic set",
-          "price": 140
-        },
-        {
-          "name": "Light Volume set",
-          "price": 150
-        },
-        {
-          "name": "Volume set",
-          "price": 175
-        },
-        {
-          "name": "Mega Volume set",
-          "price": 200
-        },
-        {
-          "name": "Wispy(Kim K)set",
-          "price": 185
-        },
-        {
-          "name": "Butterfly set",
-          "price": 180
+  {
+    "id":1,
+    "title":"Eyelash Extensions",
+    "services":[
+      {
+        "name":"Classic set",
+        "cost":{
+          "price":135
         }
-      ]
-    },
-    {
-      "id": 2,
-      "title": "Fills in",
-      "services": [
-        {
-          "name": "Classic fil",
-          "price": 90
-        },
-        {
-          "name": "Mega classic fill",
-          "price": 95
-        },
-        {
-          "name": "Light Volume fill",
-          "price": 100
-        },
-        {
-          "name": "Volume fill",
-          "price": 110
-        },
-        {
-          "name": "Mega Volume fill",
-          "price": 120
-        },
-        {
-          "name": "Wispy(Kim K) fill",
-          "price": 115
-        },
-        {
-          "name": "Butterfly fill",
-          "price": 115
+      },
+      {
+        "name":"Mega classic set",
+        "cost":{
+          "price":140
         }
-      ]
-    },
-    {
-      "id": 3,
-      "title": "Lash service",
-      "services": [
-        {
-          "name": "Lash lift & tint",
-          "price": 120
-        },
-        {
-          "name": "Lash botox",
-          "price": 20
-        },
-        {
-          "name": "Lash removal",
-          "price": 20
+      },
+      {
+        "name":"Light Volume set",
+        "cost":{
+          "price":150
         }
-      ]
-    },
-    {
-      "id": 4,
-      "title": "Hair for sale",
-      "services": [
-        {
-          "name": "Natural Slavic hair from",
-          "price": 413,
-          "weight": 100
-        },
-        {
-          "name": "Natural Lux Slavic hair from",
-          "price": 520,
-          "weight": 100
+      },
+      {
+        "name":"Volume set",
+        "cost":{
+          "price":175
         }
-      ]
-    },
-    {
-      "id": 5,
-      "title": "Hair Extensions",
-      "services": [
-        {
-          "name": "Hair extensions from",
-          "price": 495
-        },
-        {
-          "name": "Hair removal",
-          "price": 130
-        },
-        {
-          "name": "Micro capsules",
-          "price": 2,
-          "term": "per strand"
-        },
-        {
-          "name": "Nano capsules",
-          "price": 2,
-          "term": "per strand"
-        },
-        {
-          "name": "Standard capsules",
-          "price": 2,
-          "term": "per strand"
+      },
+      {
+        "name":"Mega Volume set",
+        "cost":{
+          "price":200
         }
-      ]
-    },
-    {
-      "id": 6,
-      "title": "Manicure",
-      "services": [
-        {
-          "name": "Regular E-file mani",
-          "price": 40
-        },
-        {
-          "name": "Gel polish(no-chip) + E-file",
-          "price": 70
-        },
-        {
-          "name": "Gel overlay + E-file",
-          "price": 80
-        },
-        {
-          "name": "Gel nail extensions sculpted",
-          "price": 100
-        },
-        {
-          "name": "Men's mani",
-          "price": 40
-        },
-        {
-          "name": "Kids mani",
-          "price": 20
+      },
+      {
+        "name":"Wispy(Kim K)set",
+        "cost":{
+          "price":185
         }
-      ]
-    },
-    {
-      "id": 7,
-      "title": "Pedicure",
-      "services": [
-        {
-          "name": "Regular E-file Dry pedi",
-          "price": 60
-        },
-        {
-          "name": "Gel E-file Dry pedi",
-          "price": 70
-        },
-        {
-          "name": "E- file pedi no chip toes only",
-          "price": 45
-        },
-        {
-          "name": "Kids pedi",
-          "price": 25
-        },
-        {
-          "name": "Men's dry pedi",
-          "price": 60
+      },
+      {
+        "name":"Butterfly set",
+        "cost":{
+          "price":180
         }
-      ]
-    },
-    {
-      "id": 8,
-      "title": "Additional services",
-      "services": [
-        {
-          "name": "Ombré design",
-          "price": 20
-        },
-        {
-          "name": "French design",
-          "price": 15
-        },
-        {
-          "name": "Chrome design",
-          "price": 10
-        },
-        {
-          "name": "Hand painted design starts",
-          "price": 5
-        },
-        {
-          "name": "Fix nail",
-          "price": 8
-        },
-        {
-          "name": "Stickers, glitter, stones",
-          "price": "10 and up"
+      }
+    ]
+  },
+  {
+    "id":2,
+    "title":"Fills in",
+    "services":[
+      {
+        "name":"Classic fil",
+        "cost":{
+          "price":90
         }
-      ]
-    },
-    {
-      "id": 9,
-      "title": "Brows service",
-      "services": [
-        {
-          "name": "Brow lamination",
-          "price": 100
-        },
-        {
-          "name": "Brow tint",
-          "price": 35
-        },
-        {
-          "name": "Brow shape",
-          "price": 25
-        },
-        {
-          "name": "Brow botox",
-          "price": 20
+      },
+      {
+        "name":"Mega classic fill",
+        "cost":{
+          "price":95
         }
-      ]
-    }
-  ]
+      },
+      {
+        "name":"Light Volume fill",
+        "cost":{
+          "price":100
+        }
+      },
+      {
+        "name":"Volume fill",
+        "cost":{
+          "price":110
+        }
+      },
+      {
+        "name":"Mega Volume fill",
+        "cost":{
+          "price":120
+        }
+      },
+      {
+        "name":"Wispy(Kim K) fill",
+        "cost":{
+          "price":115
+        }
+      },
+      {
+        "name":"Butterfly fill",
+        "cost":{
+          "price":115
+        }
+      }
+    ]
+  },
+  {
+    "id":3,
+    "title":"Lash service",
+    "services":[
+      {
+        "name":"Lash lift & tint",
+        "cost":{
+          "price":120
+        }
+      },
+      {
+        "name":"Lash botox",
+        "cost":{
+          "price":20
+        }
+      },
+      {
+        "name":"Lash removal",
+        "cost":{
+          "price":20
+        }
+      }
+    ]
+  },
+  {
+    "id":4,
+    "title":"Hair for sale",
+    "services":[
+      {
+        "name":"Natural Slavic hair from",
+        "cost":{
+          "price":413,
+          "weight":100
+        }
+      },
+      {
+        "name":"Natural Lux Slavic hair from",
+        "cost":{
+          "price":520,
+          "weight":100
+        }
+      }
+    ]
+  },
+  {
+    "id":5,
+    "title":"Hair Extensions",
+    "services":[
+      {
+        "name":"Hair extensions from",
+        "cost":{
+          "price":495
+        }
+      },
+      {
+        "name":"Hair removal",
+        "cost":{
+          "price":130
+        }
+      },
+      {
+        "name":"Micro capsules",
+        "cost":{
+          "price":2,
+          "term":"per strand"
+        }
+      },
+      {
+        "name":"Nano capsules",
+        "cost":{
+          "price":2,
+          "term":"per strand"
+        }
+      },
+      {
+        "name":"Standard capsules",
+        "cost":{
+          "price":2,
+          "term":"per strand"
+        }
+      }
+    ]
+  },
+  {
+    "id":6,
+    "title":"Manicure",
+    "services":[
+      {
+        "name":"Regular E-file mani",
+        "cost":{
+          "price":40
+        }
+      },
+      {
+        "name":"Gel polish(no-chip) + E-file",
+        "cost":{
+          "price":70
+        }
+      },
+      {
+        "name":"Gel overlay + E-file",
+        "cost":{
+          "price":80
+        }
+      },
+      {
+        "name":"Gel nail extensions sculpted",
+        "cost":{
+          "price":100
+        }
+      },
+      {
+        "name":"Men's mani",
+        "cost":{
+          "price":40
+        }
+      },
+      {
+        "name":"Kids mani",
+        "cost":{
+          "price":20
+        }
+      }
+    ]
+  },
+  {
+    "id":7,
+    "title":"Pedicure",
+    "services":[
+      {
+        "name":"Regular E-file Dry pedi",
+        "cost":{
+          "price":60
+        }
+      },
+      {
+        "name":"Gel E-file Dry pedi",
+        "cost":{
+          "price":70
+        }
+      },
+      {
+        "name":"E- file pedi no chip toes only",
+        "cost":{
+          "price":45
+        }
+      },
+      {
+        "name":"Kids pedi",
+        "cost":{
+          "price":25
+        }
+      },
+      {
+        "name":"Men's dry pedi",
+        "cost":{
+          "price":60
+        }
+      }
+    ]
+  },
+  {
+    "id":8,
+    "title":"Additional services",
+    "services":[
+      {
+        "name":"Ombré design",
+        "cost":{
+          "price":20
+        }
+      },
+      {
+        "name":"French design",
+        "cost":{
+          "price":15
+        }
+      },
+      {
+        "name":"Chrome design",
+        "cost":{
+          "price":10
+        }
+      },
+      {
+        "name":"Hand painted design starts",
+        "cost":{
+          "price":5
+        }
+      },
+      {
+        "name":"Fix nail",
+        "cost":{
+          "price":8
+        }
+      },
+      {
+        "name":"Stickers, glitter, stones",
+        "cost":{
+          "price":10,
+          "note":"and up"
+        }
+      }
+    ]
+  },
+  {
+    "id":9,
+    "title":"Brows service",
+    "services":[
+      {
+        "name":"Brow lamination",
+        "cost":{
+          "price":100
+        }
+      },
+      {
+        "name":"Brow tint",
+        "cost":{
+          "price":35
+        }
+      },
+      {
+        "name":"Brow shape",
+        "cost":{
+          "price":25
+        }
+      },
+      {
+        "name":"Brow botox",
+        "cost":{
+          "price":20
+        }
+      }
+    ]
+  }
+]

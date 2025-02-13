@@ -4,58 +4,102 @@ import { Icon } from 'astro-icon/components';
 interface Color {
 	color: string;
 }
-const { color } = Astro.props as Color;
+const {color} = Astro.props as Color;
 
-const telegramLink = "https://t.me/juli_zag";
-const instaLink = "https://www.instagram.com/_sirenebeauty?igsh=ZzhxbDNzcjUwdm5n";
+const {class: className} = Astro.props;
 
+const socialIcon = [
+    {name: "telegram", href: "https://t.me/juli_zag" },
+    {name: "whatsapp", href: "#" },
+    {name: "viber", href: "#" },
+    {name: "instagram", href: "https://www.instagram.com/_sirenebeauty?igsh=ZzhxbDNzcjUwdm5n" }
+]
 ---
 
 <nav class="nav-media-social" aria-label="navigation media social">
-    <ul class="media-social">
-        <li class="social-item" >
-            <a href={telegramLink} data-color={color}>
-                <Icon class="social-icon"  name="telegram" width={58} height={58} />
+    <ul class:list={[className, "media-social"]}>
+        {
+        socialIcon.map((item) => 
+        <li class="social-item" data-color={color}>
+            <a class="social-item__link"  href={item.href}>
+                <Icon class="social-icon" name={item.name} width={58} height={58} />
             </a>
         </li>
-        <li class="social-item" >
-            <a href="#" data-color={color}>
-                <Icon class="social-icon"  name="whatsapp" width={58} height={58} />
-            </a>
-        </li>
-        <li class="social-item">
-            <a href="#" data-color={color}>
-                <Icon class="social-icon" name="viber" width={58} height={58} />
-            </a>
-        </li>
-        <li class="social-item">
-            <a href={instaLink} data-color={color}>
-                <Icon class="social-icon" name="instagram" width={58} height={58} />
-            </a>
-        </li>
+        )}
     </ul>
 </nav>
 
 <style>
+    .nav-media-social {
+        max-width: inherit;
+        width: 100%;
+    }
     .media-social {
         display: flex;
         justify-content: space-between;
     }
 
+    .hero-nav {
+        justify-content: center;
+        gap: 20px;
+    }
+
+
+    .social-item {
+        --social: clamp(2.25rem, 0.9808rem + 3.5256vw, 3.625rem); /*576 - 36; 1200-58 */
+        display: block;
+        width: var(--social);
+        aspect-ratio: 1 / 1;
+        line-height:1;
+        font-size: 0;
+    }
+
+    .social-item:nth-child(3)[data-color="gold"]{
+        display: none;
+    }
+
+    .social-item__link {
+        display: block;
+        width: inherit;
+        height: inherit;
+        border-radius: 50%;
+        border: calc(var(--social) * 0.043) solid;
+        transition: all 0.7s;
+        overflow: hidden;
+    }
+
+    [data-color="white"] .social-item__link{
+        border-color: var(--color-logoW);
+        color: var(--color-logoW);
+    }
+
+    [data-color="black"] .social-item__link{
+        border-color:var(--color-logoB);
+        color: var(--color-logoB);
+    }
+
+    [data-color="gold"] .social-item__link{
+        border-color: transparent;
+        background-color: var(--color-gold);
+        color: var(--color-logoW);
+    }
+
+    :is([data-color="white"], [data-color="black"]) .social-item__link:is(:hover, :focus)
+    {
+        border-color: var(--color-khaki-dark);
+        color: var(--color-khaki-dark);        
+    }
+
+    [data-color="gold"] .social-item__link:is(:hover, :focus) {
+        background-color: var(--color-khaki-dark);
+    }
+
     .social-icon {
-        width: clamp(2.25rem, 0.9808rem + 3.5256vw, 3.625rem); /*576 - 36; 1200-58 */
-        height: auto;
-        transition: color 0.7s;
+        width: 100%;
+        height: 100%;
     }
 
-    [data-color="white"] .social-icon:is(:hover, :focus) {
-        color: var(--color-khaki-dark);
-    }
 
-    [data-color="black"] .social-icon:is(:hover, :focus) {
-        color:  var(--color-khaki-dark);
-    }
 
-    @media screen and (max-width: 575.98px) {
-    }
+    @media screen and (max-width: 575.98px) {}
 </style>

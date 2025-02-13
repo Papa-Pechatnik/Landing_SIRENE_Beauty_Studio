@@ -66,7 +66,7 @@
    line-height: 1.5;
  }
  
- svg *[stroke] { stroke: currentColor }
- svg * {
+ svg *[stroke] { stroke: currentColor };
+svg * {
    transition-property: fill, stroke;
  }

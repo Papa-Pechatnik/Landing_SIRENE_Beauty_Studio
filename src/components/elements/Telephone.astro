@@ -18,12 +18,13 @@ const { width, height} = Astro.props as Icons;
 const tel = 8476710065;
 ---
 
-<a class:list={[className, "tel font-size_4"]} data-color={color} href=`tel:+1${tel}`>
+<a class:list={[className, "tel font-size_4 pulse-button"]} data-color={color} href=`tel:+1${tel}` aria-labelledby="phone">
     <Icon name = "phone" width={width} height={height}/>
-    <p>(847) 671 0 065</p>
+    <p id="phone">(847) 671 0 065</p>
 </a>
-
 <style>
+
+
     .tel {
         display: flex;
         align-items: center;
@@ -57,8 +58,24 @@ const tel = 8476710065;
         background-color: var(--color-gold);
         padding: clamp(0.5rem, -0.3857rem + 1.8476vw, 1rem) clamp(1.125rem, -0.8678rem + 4.157vw, 2.25rem); /* 1200-16; 767 - 8*/ /* 1200-36; 767 - 18*/
         border-radius: clamp(1rem, -0.5499rem + 3.2333vw, 1.875rem); /* 1200-30; 767 - 16*/
-        transition: background-color 0.7s;
+        transition: background-color 0.7s, box-shadow .3s;
     }
+
+            @keyframes pulse {  
+        0% {  
+            box-shadow: 0 0 0 0 rgba(210, 181, 104, 0.4);  
+        }  
+        70% {  
+            box-shadow: 0 0 0 4px rgba(210, 181, 104, 0.8);  
+        }  
+        100% {  
+            box-shadow: 0 0 0 0 rgba(210, 181, 104, 1);  
+        }  
+        }  
+
+    .header-nav.pulse-button {
+        animation: pulse 1.5s infinite;
+        }
 
     .header-nav:is(:hover, :focus) {
         color: var(--color-logoW);
