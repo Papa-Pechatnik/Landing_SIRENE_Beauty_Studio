@@ -39,7 +39,7 @@ h2, p {
     width: 100%;
     padding-left: var(--pad-container);
     padding-right: var(--pad-container);
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 
 .section {

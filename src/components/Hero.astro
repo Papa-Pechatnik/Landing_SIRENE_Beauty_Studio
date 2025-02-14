@@ -4,152 +4,150 @@ import NavSocialMedia from "./NavSocialMedia.astro";
 import ButtonBookNowArrow from "./elements/ButtonBookNowArrow.astro";
 import background from "./assets/images/hero/hero-background.jpg";
 import mirror from "./assets/images/hero/mirror-transparent.png";
-const motivation1 = "Our talented team of beauty experts offers personalized services that cater to your unique style and needs";
+const motivation1 =
+  "Our talented team of beauty experts offers personalized services that cater to your unique style and needs";
 const motivation2 = "We use high-quality, professional-grade products to ensure exceptional results";
 ---
-<section class="hero">
-    <h1>SIRENE</h1>
-    <div class="hero-wrap">
-        <section class="hero-image">
-            <Image class="hero-image__mirror" src={mirror} width={1720} height={1000} alt="mirror"/>
-            <!-- class="hero-background" -->
 
-        </section>
-        <section class="hero-motivation">
-            <div class="motivation-box">
-                <div class="motivation-text motivation-box__left">
-                    <strong>
-                        {motivation1}
-                    </strong>
-                </div>
-                <NavSocialMedia color="gold" class="hero-nav"/>
-            </div>
-            <div class="motivation-box ">
-                <div class="motivation-text motivation-box__right">
-                    <strong>
-                        {motivation2}
-                    </strong>
-                </div>
-                <ButtonBookNowArrow/>
-            </div>
-        </section>
-    </div>
+<section class="hero">
+  <h1>SIRENE</h1>
+  <div class="hero-wrap">
+    <section class="hero-image">
+      <Image class="hero-image__mirror" src={mirror} width={1720} height={1000} alt="mirror" />
+      <!-- class="hero-background" -->
+    </section>
+    <section class="hero-motivation">
+      <div class="motivation-box">
+        <div class="motivation-text motivation-box__left">
+          <strong>
+            {motivation1}
+          </strong>
+        </div>
+        <NavSocialMedia color="gold" class="hero-nav" />
+      </div>
+      <div class="motivation-box">
+        <div class="motivation-text motivation-box__right">
+          <strong>
+            {motivation2}
+          </strong>
+        </div>
+        <ButtonBookNowArrow />
+      </div>
+    </section>
+  </div>
 </section>
 
 <style>
+  h1 {
+    font-family: "Sirene-regular";
+    font-weight: 400;
+    font-size: clamp(120px, 26vw, 500px);
+    line-height: 0.7;
+    text-transform: uppercase;
+    background: linear-gradient(to bottom, #fcf5e0 0%, #836d31 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-block: 0;
+    text-align: center;
+    z-index: -1;
+    position: relative;
+  }
 
-    h1 {
-        font-family: "Sirene-regular";
-        font-weight: 400;
-        font-size: clamp(120px, 26vw, 500px);
-        line-height: 0.7;
-        text-transform: uppercase;
-        background: linear-gradient(to bottom, #fcf5e0 0%, #836d31 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-block: 0;
-        text-align: center;
-    }
+  .hero {
+    margin-top: -50px;
+    margin-bottom: var(--margin-section-bottom);
+    /* background: red; */
+  }
 
-    .hero {
-        margin-top: -50px;
-        margin-bottom: var(--margin-section-bottom);
-        /* background: red; */
-    }
+  .hero-wrap {
+    position: relative;
+    /* top:0; */
+    margin: 0;
+  }
 
-    .hero-wrap {
-        position: relative;
-        /* top:0; */
-        margin: 0;
+  .hero-image {
+    position: relative;
+    max-width: 100%;
+    max-height: 700px;
+    height: 100%;
+    background-image: url("./assets/images/hero/hero-background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    aspect-ratio: 1720 / 700;
+    border-radius: clamp(1.875rem, -1.268rem + 8.8692vw, 9.375rem); /*1920 - 150 px 567 - 30px*/
 
-    }
+    display: flex;
+    justify-content: center;
+    align-items: end;
+  }
 
-    .hero-image {
-        position: relative;
-        max-width: 100%;
-        max-height: 700px;
-        height: 100%;
-        background-image: url("./assets/images/hero/hero-background.jpg");
-        background-repeat: no-repeat;
-        background-size: 100%;
-        aspect-ratio: 1720 / 700;
-        border-radius: clamp(1.875rem, -1.268rem + 8.8692vw, 9.375rem); /*1920 - 150 px 567 - 30px*/
+  .hero-image__mirror {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1720 / 1000;
+    /* border-radius: 150px; */
+    /* overflow: hidden; */
+  }
 
-        display: flex;
-        justify-content: center;
-        align-items: end;
-    }
+  .hero-motivation {
+    height: 100%;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: clamp(1.25rem, -5rem + 8.3333vw, 5rem); /*1920 - 80 px 1200 - 20px*/
+  }
 
-    .hero-image__mirror {
-        position: absolute;
-        width: 100%;
-        height: auto;
-        aspect-ratio: 1720 / 1000;
-        /* border-radius: 150px; */
-        /* overflow: hidden; */
-    }
+  .motivation-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-    .hero-motivation {
-        height: 100%;
-        top: 0;
-        position: absolute;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: clamp(1.25rem, -5rem + 8.3333vw, 5rem); /*1920 - 80 px 1200 - 20px*/
-    }
+    font-family: var(--font-Roboto);
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--color-gold);
+    text-align: center;
+    text-wrap: balance;
+  }
 
-    .motivation-box {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+  .motivation-box strong {
+    font-weight: inherit;
+  }
 
-        font-family: var(--font-Roboto);
-        font-weight: 500;
-        font-size: 16px;
-        color: var(--color-gold);
-        text-align: center;
-        text-wrap: balance;
-    }
+  .motivation-box__left {
+    max-width: min(16.6vw, 318px);
+    width: 100%;
+    min-width: 200px;
+    height: 190px;
+    margin-bottom: clamp(1.25rem, -2.9018rem + 6.6964vw, 3.125rem); /*1440- 50 992 - 20*/
+  }
 
-    .motivation-box strong {
-        font-weight: inherit;
-    }
+  .motivation-box__right {
+    max-width: min(24vw, 362px);
+    width: 100%;
+    min-width: 230px;
+    height: 138px;
+    margin-bottom: 50px;
+  }
 
-    .motivation-box__left {
-        max-width: min(16.6vw, 318px);  
-        width: 100%;
-        min-width: 200px;
-        height: 190px;
-        margin-bottom: clamp(1.25rem, -2.9018rem + 6.6964vw, 3.125rem); /*1440- 50 992 - 20*/
-    }
+  .motivation-text {
+    /* width: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    .motivation-box__right {
-        max-width: min(24vw, 362px);  
-        width: 100%;
-        min-width: 230px;
-        height: 138px;
-        margin-bottom: 50px;
-    }
+    border: 2px solid var(--color-gold);
+    border-radius: 50px;
 
-    .motivation-text {
-        /* width: 100%; */
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    backdrop-filter: blur(18px);
+    background: var(--color-snow);
 
-        border: 2px solid var(--color-gold);
-        border-radius: 50px;
-
-        backdrop-filter: blur(18px);
-        background: var(--color-snow);
-
-        padding: 10px;
-
-    }
-
-
+    padding: 10px;
+  }
 </style>

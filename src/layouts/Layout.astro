@@ -20,9 +20,10 @@ const { title, author, description } = Astro.props;
 		<meta name="description" content={description} />		
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 	</head>
-	<body style="font-family: Roboto, Tahoma, Geneva, Kalimati, sans-serif">
+	<body>
 		<slot />
 		<script src="/src/js/nav.js"></script>
+		<script src="/src/js/price-list.js"></script>
 	</body>
 </html>
 
