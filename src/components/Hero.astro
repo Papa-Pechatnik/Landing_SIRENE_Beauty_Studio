@@ -10,23 +10,24 @@ const motivation2 = "We use high-quality, professional-grade products to ensure 
 ---
 
 <section class="hero">
-  <h1>SIRENE</h1>
+  <h1>sirene</h1>
   <div class="hero-wrap">
-    <section class="hero-image">
-      <Image class="hero-image__mirror" src={mirror} width={1720} height={1000} alt="mirror" />
-      <!-- class="hero-background" -->
-    </section>
+    <div class="hero-background">
+      <section class="hero-image">
+        <Image class="hero-image__mirror" src={mirror} width={1270} height={965} alt="mirror" />
+      </section>
+    </div>
     <section class="hero-motivation">
-      <div class="motivation-box">
-        <div class="motivation-text motivation-box__left">
+      <div class="motivation-box motivation-box__left">
+        <div class="motivation-text">
           <strong>
             {motivation1}
           </strong>
         </div>
         <NavSocialMedia color="gold" class="hero-nav" />
       </div>
-      <div class="motivation-box">
-        <div class="motivation-text motivation-box__right">
+      <div class="motivation-box motivation-box__right">
+        <div class="motivation-text">
           <strong>
             {motivation2}
           </strong>
@@ -38,6 +39,11 @@ const motivation2 = "We use high-quality, professional-grade products to ensure 
 </section>
 
 <style>
+  .hero {
+    position: relative;
+    margin-bottom: clamp(1.25rem, -13.1423rem + 30.0231vw, 9.375rem);
+  }
+
   h1 {
     font-family: "Sirene-regular";
     font-weight: 400;
@@ -50,56 +56,52 @@ const motivation2 = "We use high-quality, professional-grade products to ensure 
     -webkit-text-fill-color: transparent;
     margin-block: 0;
     text-align: center;
-    z-index: -1;
     position: relative;
-  }
-
-  .hero {
-    margin-top: -50px;
-    margin-bottom: var(--margin-section-bottom);
-    /* background: red; */
+    top: 0;
   }
 
   .hero-wrap {
     position: relative;
-    /* top:0; */
-    margin: 0;
+    width: 100%;
+  }
+
+  .hero-background {
+    position: relative;
+    width: 100%;
+    max-height: 700px;
+    min-height: 160px;
+    aspect-ratio: 1724/700;
+
+    background-image: url("./assets/images/hero/hero-background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: clamp(1.875rem, -3.125rem + 13.8889vw, 9.375rem); /*1440 - 150 576 - 30 */
   }
 
   .hero-image {
-    position: relative;
-    max-width: 100%;
-    max-height: 700px;
-    height: 100%;
-    background-image: url("./assets/images/hero/hero-background.jpg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    aspect-ratio: 1720 / 700;
-    border-radius: clamp(1.875rem, -1.268rem + 8.8692vw, 9.375rem); /*1920 - 150 px 567 - 30px*/
-
-    display: flex;
-    justify-content: center;
-    align-items: end;
+    width: 100%;
+    position: absolute;
+    bottom: -3px;
   }
 
   .hero-image__mirror {
-    position: absolute;
     width: 100%;
     height: auto;
-    aspect-ratio: 1720 / 1000;
-    /* border-radius: 150px; */
-    /* overflow: hidden; */
   }
 
   .hero-motivation {
-    height: 100%;
-    top: 0;
     position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: clamp(1.25rem, -5rem + 8.3333vw, 5rem); /*1920 - 80 px 1200 - 20px*/
+    align-items: flex-start;
+    gap: 16px;
+    padding-left: clamp(1.25rem, -1.2446rem + 5.2038vw, 5rem);
+    padding-right: clamp(1.25rem, -2.0761rem + 6.9384vw, 6.25rem);
   }
 
   .motivation-box {
@@ -107,7 +109,7 @@ const motivation2 = "We use high-quality, professional-grade products to ensure 
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
+    row-gap: clamp(1.25rem, -2.9018rem + 6.6964vw, 3.125rem); /*1440- 50 992 - 20;*/
     font-family: var(--font-Roboto);
     font-weight: 500;
     font-size: 16px;
@@ -117,37 +119,68 @@ const motivation2 = "We use high-quality, professional-grade products to ensure 
   }
 
   .motivation-box strong {
-    font-weight: inherit;
+    font-weight: 500;
   }
 
   .motivation-box__left {
-    max-width: min(16.6vw, 318px);
-    width: 100%;
+    width: min(16.6vw, 318px);
     min-width: 200px;
-    height: 190px;
-    margin-bottom: clamp(1.25rem, -2.9018rem + 6.6964vw, 3.125rem); /*1440- 50 992 - 20*/
   }
 
   .motivation-box__right {
-    max-width: min(24vw, 362px);
-    width: 100%;
+    width: min(24vw, 362px);
     min-width: 230px;
-    height: 138px;
-    margin-bottom: 50px;
+  }
+
+  .motivation-box__left .motivation-text {
+    --tb-mot: clamp(1.25rem, 5.4398vw - 0.7083rem, 4.1875rem);
+    --rl-mot: clamp(1.25rem, 1.6667rem - 0.463vw, 1.5rem);
+    padding: var(--tb-mot) var(--rl-mot);
+  }
+
+  .motivation-box__right .motivation-text {
+    --tb-mot: clamp(1.3125rem, 0.1042rem + 3.3565vw, 3.125rem);
+    --rl-mot: clamp(1.25rem, 1.6667rem - 0.463vw, 1.5rem);
+    padding: var(--tb-mot) var(--rl-mot);
   }
 
   .motivation-text {
-    /* width: 100%; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+    width: 100%;
     border: 2px solid var(--color-gold);
-    border-radius: 50px;
-
+    border-radius: clamp(1.875rem, -0.3392rem + 4.6189vw, 3.125rem);
     backdrop-filter: blur(18px);
     background: var(--color-snow);
-
     padding: 10px;
+  }
+
+  @media screen and (max-width: 766.98px) {
+    .hero-wrap,
+    .hero-motivation {
+      position: static;
+    }
+
+    .hero-motivation {
+      top: 0;
+      left: 0;
+      transform: translateY(0);
+      padding: 1.875rem 0;
+    }
+
+    .motivation-box strong {
+    font-weight: 700;
+    font-size: 10px;
+  }
+
+    .motivation-box__left,
+    .motivation-box__right {
+      flex: 1;
+      min-width: 40%;
+    }
+  }
+
+  @media screen and (max-width: 575.98px) {
+    .header {
+      flex-wrap: nowrap;
+    }
   }
 </style>

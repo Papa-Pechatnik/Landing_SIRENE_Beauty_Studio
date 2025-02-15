@@ -1,31 +1,63 @@
 ---
 import { Icon } from "astro-icon/components";
+
+const { class: className} = Astro.props;
 ---
+
 <button>
-    Book now
-    <div class="icon-background">
-        <Icon name="arrow-btn"/>    
-    </div>
+Book now
+  <div class="icon-background transition">
+    <Icon name="arrow-btn" />
+  </div>
 </button>
 
+
+
 <style>
-    button {
-        position: relative;
-text-align: center;
-        border: 1.57px solid var(--color-gold);
-border-radius: 48px;
-width: 190px;
-height: 50px;
-background: rgba(255, 255, 255, 0.6);
-    }
-    [data-icon="arrow-btn"] {
-        position: absolute;
-        top:0;
-        right: 0;
-        width: 50px;
-        height: 50px;
-        aspect-ratio: 1/1;
-        border-radius: 50%;
-        background-color: brown;
-    }
+  .transition {
+    transition: all 0.5s;
+    cursor: pointer;
+  }
+  button {
+    --button-h: 50px;
+    position: relative;
+height: var(--button-h);
+wi
+
+    text-align: center;
+    border: 1.57px solid var(--color-gold);
+    border-radius: calc(var(--button-h) - 2px);
+    
+    background: rgba(255, 255, 255, 0.6);
+    padding-left: 45px;
+    padding-right: 70px;
+  }
+  button:hover {
+    border: 1.57px solid var(--color-khaki-dark);
+  }
+
+  button:hover .icon-background {
+    background-color: var(--color-khaki-dark);
+  }
+
+  .icon-background {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background-color: var(--color-gold);
+  }
+
+  [data-icon="arrow-btn"] {
+    width: 16px;
+    height: 16px;
+  }
+
+
 </style>

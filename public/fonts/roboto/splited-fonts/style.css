@@ -1,0 +1,22 @@
+/********************************************
+Сгенерированно в Quick Site Upgrade
+https://quick-site-upgrade.com/tools/web-font-optimizer
+********************************************/
+@font-face {
+    font-family: 'roboto-bold';
+    font-style: normal;
+    font-weight: 400;
+    src: url('roboto-bold-english.woff2') format('woff2'),
+        url('roboto-bold-english.woff') format('woff'),
+        url('roboto-bold-english.ttf') format('truetype');
+    unicode-range: U+21-5F,U+61-7E,U+2013-2014,U+2018-2019,U+201C-201D,U+2026,U+20A4;
+}
+@font-face {
+    font-family: 'roboto-semibold';
+    font-style: normal;
+    font-weight: 400;
+    src: url('roboto-semibold-english.woff2') format('woff2'),
+        url('roboto-semibold-english.woff') format('woff'),
+        url('roboto-semibold-english.ttf') format('truetype');
+    unicode-range: U+21-5F,U+61-7E,U+2013-2014,U+2018-2019,U+201C-201D,U+2026,U+20A4;
+}

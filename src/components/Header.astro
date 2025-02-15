@@ -5,38 +5,37 @@ import Telephone from "../components/elements/Telephone.astro";
 
 const color = "black";
 ---
+
 <header class="container">
-    <div class="header">
-        <Logo/>
-        <Navigation class="header-nav" color={color} />
-        <Telephone class="header-nav" />
-    </div>
+  <div class="header">
+    <Logo />
+    <Navigation class="header-nav" color={color} />
+    <Telephone class="header-nav" />
+  </div>
 </header>
 
 <style>
-    .header {
-        --header-top: clamp(1.875rem, -0.3392rem + 4.6189vw, 3.125rem); /*767 - 30px 1200px - 50px*/
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        column-gap: calc( 2 * var(--flex-gap-min));
-        margin-top: var(--header-top);
-        margin-bottom: 84px;
-        /* margin-bottom: clamp(1.25rem, -3.5968rem + 10.1106vw, 5.25rem);  */
-        /*767 - 20px 1400px - 84px*/
-    }
+  .header {
+    --header-top: clamp(1.875rem, -0.3392rem + 4.6189vw, 3.125rem); /*767 - 30px 1200px - 50px*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: calc(2 * var(--flex-gap-min));
+    margin-top: var(--header-top);
+    margin-bottom: 30px;
+    /* margin-bottom: clamp(1.25rem, -3.5968rem + 10.1106vw, 5.25rem);  */
+    /*767 - 20px 1400px - 84px*/
+  }
 
-    @media screen and (max-width: 1199.98px) {
-.header {
-    flex-wrap: wrap;
-    row-gap: var(--flex-gap-min);
-}
+  @media screen and (max-width: 1199.98px) {
+    .header {
+      flex-wrap: wrap;
+      row-gap: var(--flex-gap-min);
     }
-    @media screen and (max-width: 575.98px) {
-        .header {
-    flex-wrap: nowrap;
-    /* max-width: inherit; */
-      /* position: relative; */
-}
+  }
+  @media screen and (max-width: 575.98px) {
+    .header {
+      flex-wrap: nowrap;
     }
+  }
 </style>

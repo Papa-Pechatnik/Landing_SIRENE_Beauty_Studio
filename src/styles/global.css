@@ -15,11 +15,14 @@
     --flex-gap-min: 1rem;
 }
 
+
 body {
     margin: 0 auto;
     line-height: 1.15;
     font-family: var(--font-Roboto);
     font-style: normal;
+    font-weight: 500;
+    text-rendering: optimizeLegibility;
 
 }
 
@@ -35,7 +38,7 @@ h2, p {
 .container {
     --pad-container: clamp(1.125rem, -0.125rem + 3.4722vw, 3rem);/*576 - 18px 1440px - 48px*/
     margin-inline: auto;
-    max-width: 1920px;
+    max-width: 1820px;
     width: 100%;
     padding-left: var(--pad-container);
     padding-right: var(--pad-container);
