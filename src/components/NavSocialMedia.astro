@@ -1,7 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
-import NumberTel from './NumberTel.astro';
-
+import {NumberTel} from "./elements/NumberTel.astro";
 interface Color {
 	color: string;
 }
@@ -9,7 +8,7 @@ const {color} = Astro.props as Color;
 
 const {class: className} = Astro.props;
 
-// const tel = 18476710065;
+// const NumberTel = 18476710065;
 
 const socialIcon = [
     {name: "telegram", href: "https://t.me/juli_zag" },

@@ -1,11 +1,14 @@
 ---
-
+// const NumberTel = 18476710065;
+import {NumberTel} from "./NumberTel.astro";
 ---
+<a href=`sms:+${NumberTel}` class="btn">
+    Book now
+  </a>
 
-<button type="button">Book now</button>
 
 <style>
-    button {
+    .btn {
         display: inline-block;
         width: max-content;
         font-family: var(--font-Roboto);
@@ -21,13 +24,13 @@
         transition: all 0.7s;
     }
 
-    button:hover {
+    .btn:hover {
         background: var(--color-khaki-dark);
     }
 
 
     @media screen and (max-width: 575.98px) {
-        button {
+        .btn {
             font-size: 12px;
         }
     }

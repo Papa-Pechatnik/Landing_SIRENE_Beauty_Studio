@@ -1,7 +1,8 @@
 ---
 import { Icon } from "astro-icon/components";
-import NumberTel from "../NumberTel.astro";
 const { class: className } = Astro.props;
+
+const NumberTel = 18476710065;
 ---
 
 <a href=`sms:+${NumberTel}` class="btn">
@@ -36,11 +37,11 @@ const { class: className } = Astro.props;
     background: rgba(255, 255, 255, 0.6);
     padding-left: 45px;
   }
-  button:hover {
+  .btn:hover {
     border: 1.57px solid var(--color-khaki-dark);
   }
 
-  button:hover .icon-background {
+  .btn:hover .icon-background {
     background-color: var(--color-khaki-dark);
   }
 
