@@ -5,7 +5,8 @@ const { class: className} = Astro.props;
 ---
 
 <button>
-Book now
+  <p>Book now</p>
+
   <div class="icon-background transition">
     <Icon name="arrow-btn" />
   </div>
@@ -22,15 +23,14 @@ Book now
     --button-h: 50px;
     position: relative;
 height: var(--button-h);
-wi
-
-    text-align: center;
+white-space: nowrap;
+width: 190px;
+    /* text-align: center; */
     border: 1.57px solid var(--color-gold);
     border-radius: calc(var(--button-h) - 2px);
     
     background: rgba(255, 255, 255, 0.6);
     padding-left: 45px;
-    padding-right: 70px;
   }
   button:hover {
     border: 1.57px solid var(--color-khaki-dark);

@@ -15,10 +15,10 @@ interface Icons {
 }
 const { width, height} = Astro.props as Icons;
 
-const tel = 8476710065;
+const tel = 18476710065;
 ---
 
-<a class:list={[className, "tel font-size_4 pulse-button"]} data-color={color} href=`tel:+1${tel}` aria-labelledby="phone">
+<a class:list={[className, "tel font-size_4 pulse-button"]} data-color={color} href=`tel:+${tel}` aria-labelledby="phone">
     <Icon name = "phone" width={width} height={height}/>
     <p id="phone">(847) 671 0 065</p>
 </a>
