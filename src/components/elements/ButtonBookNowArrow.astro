@@ -1,34 +1,38 @@
 ---
 import { Icon } from "astro-icon/components";
-
-const { class: className} = Astro.props;
+import NumberTel from "../NumberTel.astro";
+const { class: className } = Astro.props;
 ---
 
-<button>
+<a href=`sms:+${NumberTel}` class="btn">
   <p>Book now</p>
 
   <div class="icon-background transition">
     <Icon name="arrow-btn" />
   </div>
-</button>
-
-
+</a>
 
 <style>
   .transition {
     transition: all 0.5s;
     cursor: pointer;
   }
-  button {
+  .btn {
     --button-h: 50px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
     position: relative;
-height: var(--button-h);
-white-space: nowrap;
-width: 190px;
-    /* text-align: center; */
+    width: 190px;
+    height: var(--button-h);
+    white-space: nowrap;
+    font-size: var(--font-Roboto);
+    font-weight: 600;
+    color: var(--color-black1);
     border: 1.57px solid var(--color-gold);
     border-radius: calc(var(--button-h) - 2px);
-    
+
     background: rgba(255, 255, 255, 0.6);
     padding-left: 45px;
   }
@@ -58,6 +62,4 @@ width: 190px;
     width: 16px;
     height: 16px;
   }
-
-
 </style>
