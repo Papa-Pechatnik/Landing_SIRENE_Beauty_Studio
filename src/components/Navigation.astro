@@ -15,7 +15,7 @@ const NavLinks = [
 ];
 ---
 
-<nav class={className}>
+<div class={className}>
   <div class="background-nav" aria-hidden="true"></div>
   <button type="button" class="hamburger">
     <span></span>
@@ -23,7 +23,7 @@ const NavLinks = [
     <span></span>
   </button>
 
-  <div class="menu-overlay">
+  <nav class="menu-overlay">
     <ul class="nav-list">
       {
         NavLinks.map((item) => (
@@ -35,8 +35,8 @@ const NavLinks = [
         ))
       }
     </ul>
-  </div>
-</nav>
+  </nav>
+</div>
 
 <style>
   button {
@@ -108,7 +108,8 @@ const NavLinks = [
       max-width: var(--width-button);
     }
 
-    .header-nav .background-nav {
+    /* .header-nav  */
+    .background-nav {
       /* z-index: 1; */
       position: fixed;
       bottom: 0;
@@ -126,12 +127,14 @@ const NavLinks = [
         opacity 0.75s ease;
     }
 
-    .header-nav .background-nav.open {
+    /* .header-nav  */
+    .background-nav.open {
       height: 100%;
       opacity: 0.9;
     }
 
-    .header-nav .hamburger {
+    /* .header-nav */
+    .hamburger {
       /* z-index: 2; */
       position: relative;
       top: 0;
@@ -145,14 +148,16 @@ const NavLinks = [
       cursor: pointer;
     }
 
-    .header-nav .hamburger.open {
+    /* .header-nav  */
+    .hamburger.open {
       position: fixed;
       top: calc(var(--header-top) + 6px);
       right: var(--pad-container);
       background-color: var(--color-black1);
     }
 
-    .header-nav .menu-overlay {
+    /* .header-nav */
+    .menu-overlay {
       position: fixed;
       right: 0;
       top: -20%;
@@ -167,12 +172,14 @@ const NavLinks = [
         opacity 0.75s ease;
     }
 
-    .header-nav .menu-overlay.open {
+    /* .header-nav  */
+    .menu-overlay.open {
       top: 14%;
       opacity: 1;
     }
 
-    .header-nav .nav-list {
+    /* .header-nav  */
+    .nav-list {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -187,7 +194,8 @@ const NavLinks = [
       margin: 20px;
     }
 
-    .header-nav .nav-item {
+    /* .header-nav  */
+    .nav-item {
       margin: 10px 0;
       transform: translateY(-380px);
       opacity: 0;
