@@ -78,6 +78,18 @@
         section.append(title, dl);
         pricebox.appendChild(section);
       }
+/* accordion */
+      const acc = document.getElementsByClassName("price-box__title");
+console.log(acc);
+
+for (let i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    console.log ("нажал");
+    this.classList.toggle("active");
+    const panel = this.nextElementSibling;
+    panel.style.display = panel.style.display === "flex" ? "none" : "flex";
+  });
+}
     })
     .catch((error) => {
       console.error("Error loading or processing JSON:", error);

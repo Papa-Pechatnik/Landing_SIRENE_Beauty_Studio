@@ -15,7 +15,19 @@ const motivation2 = "We use high-quality, professional-grade products to ensure 
     <div class="hero-background">
       <section class="hero-image">
         <Image class="hero-image__mirror" src={mirror} width={1270} height={965} alt="mirror" />
+      <section class="hero-slider">
+        <div class="slide slid-1">
+          1
+        </div>
+        <div class="slide  slid-2">
+          2
+        </div>
+        <div class="slide slid-3">
+          3
+        </div>
+      </section>        
       </section>
+
     </div>
     <section class="hero-motivation">
       <div class="motivation-box motivation-box__left">
@@ -39,6 +51,7 @@ const motivation2 = "We use high-quality, professional-grade products to ensure 
 </section>
 
 <style>
+
   .hero {
     position: relative;
     margin-bottom: clamp(1.25rem, -13.1423rem + 30.0231vw, 9.375rem);
@@ -83,6 +96,19 @@ const motivation2 = "We use high-quality, professional-grade products to ensure 
     width: 100%;
     position: absolute;
     bottom: -3px;
+    z-index: 0;
+  }
+
+  .hero-slider {
+    z-index: -1;
+    bottom: 46.5%;
+    left: 46.5%;
+    transform: translate(-50%, 50%);
+    position: absolute;
+    background-color: red;
+    width: 43%;
+    height: 77%;
+    border-radius: 50%;
   }
 
   .hero-image__mirror {

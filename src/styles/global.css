@@ -161,21 +161,28 @@ h2, p {
    margin-inline: 0.5em;
    border-bottom: 2px dotted;
  }
+ 
+
 
  @media screen and (max-width: 700px) {
+    /*accordion*/
     .price-list {
+        display: none;
         overflow: hidden;
-        height: 0;
+        max-height: max-content;
+        transition: max-height 0.7s ease-out;
     }
+
     .price-box__title {
         text-align: center;
+        cursor: pointer;
+        margin-top: 32px;
     }
     .price-box__title-arrow {
     display: inline;
     vertical-align: middle;
     font-size: 10px;
     margin-left: 8px; 
-    
     }
 }
 
