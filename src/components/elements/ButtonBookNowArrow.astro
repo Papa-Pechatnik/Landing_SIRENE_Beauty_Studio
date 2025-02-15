@@ -46,13 +46,13 @@ const NumberTel = 18476710065;
   }
 
   .icon-background {
-    width: 44px;
-    height: 44px;
+    width: calc(var(--button-h) - 6px);
+    height: calc(var(--button-h) - 6px);
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    right: 3px;
+    right: 2px;
     top: 50%;
     transform: translateY(-50%);
     border-radius: 50%;
@@ -60,7 +60,18 @@ const NumberTel = 18476710065;
   }
 
   [data-icon="arrow-btn"] {
-    width: 16px;
-    height: 16px;
+    width: calc(32% * var(--button-h));
+    height: calc(32% * var(--button-h));
+  }
+
+  @media screen and (max-width: 575.98px) {
+    .btn {
+    --button-h: 32px;
+    width: 135px;
+    height: var(--button-h);
+    font-size: 10px;
+    font-weight: 500;
+    padding-left: 40px;
+  }
   }
 </style>

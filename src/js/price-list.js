@@ -12,6 +12,7 @@
       for (let i = 0; i < jsonData.length; i++) {
         const section = document.createElement("section");
         section.classList.add("price-box__item", `box-id${i}`);
+        section.setAttribute("id", `box-id${i}`);
 
         const title = document.createElement("h3");
         title.classList.add("price-box__title", "font-size_3", "text-capitalize", "title--gold");
