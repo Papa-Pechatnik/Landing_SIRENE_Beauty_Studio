@@ -2,29 +2,36 @@
 import { Image } from "astro:assets";
 import NavSocialMedia from "./NavSocialMedia.astro";
 import ButtonBookNowArrow from "./elements/ButtonBookNowArrow.astro";
-import background from "./assets/images/hero/hero-background.jpg";
 import mirror from "./assets/images/hero/mirror-transparent.png";
+import slide3 from "./assets/images/services/services_img3_brows-service.jpg";
+import slide2 from "./assets/images/services/services_img1_eyelash-extensions.jpg";
+import slide1 from "./assets/images/services/services_img4_hair-extensions.jpg";
 const motivation1 =
   "Our talented team of beauty experts offers personalized services that cater to your unique style and needs";
 const motivation2 = "We use high-quality, professional-grade products to ensure exceptional results";
 ---
 
 <section class="hero">
-  <h1>sirene</h1>
+<h1>sirene
+</h1>
+
+
   <div class="hero-wrap">
     <div class="hero-background">
       <section class="hero-image">
         <Image class="hero-image__mirror" src={mirror} width={1270} height={965} alt="mirror" />
       <section class="hero-slider">
-        <div class="slide slid-1">
-          1
-        </div>
-        <div class="slide  slid-2">
-          2
-        </div>
         <div class="slide slid-3">
-          3
+          <Image class="slide__img" src={slide3} alt="slide-img" />
+        </div>  
+        <div class="slide  slid-2">
+          <Image class="slide__img" src={slide2} alt="slide-img" />
+        </div>      
+        <div class="slide slid-1">
+          <Image class="slide__img" src={slide1} alt="slide-img" />
         </div>
+
+
       </section>        
       </section>
 
@@ -110,11 +117,6 @@ const motivation2 = "We use high-quality, professional-grade products to ensure 
     border-radius: 50%;
     overflow: hidden;
   }
-  
-  {
-transition: all 1s ease-out;    
-  }
-  
 
   .slide {
     position: absolute;
@@ -126,16 +128,37 @@ transition: all 1s ease-out;
     align-items: center;
   }
 
-  .slid-1 {
-    background-color: red;
+  @keyframes slid {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 1;
+    }
+    75% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
   }
 
-  .slid-2 {
-    background-color: yellow;
+  .slide__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
+
+  .slid-1 {
+    animation-delay: 12s;
+    animation: slid 12s ease-in-out infinite;
+  }
+  .slid-2 {
+    animation: slid 36s ease-in-out infinite;
+  } 
 
   .slid-3 {
-    background-color: rgb(14, 116, 58);
+
   }
 
   .hero-image__mirror {
