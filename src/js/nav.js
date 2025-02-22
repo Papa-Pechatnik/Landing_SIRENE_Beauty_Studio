@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
     const menuOverlay = document.querySelector('.menu-overlay');
     const itemLinks = document.querySelectorAll('.header-nav .nav-item__link');
+
   
     if (hamburger) {
       hamburger.addEventListener('click', () => {

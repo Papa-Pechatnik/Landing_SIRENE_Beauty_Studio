@@ -23,7 +23,7 @@ const socialIcon = [
         {
         socialIcon.map((item) => 
         <li class="social-item" data-color={color}>
-            <a class="social-item__link"  href={item.href}>
+            <a class="social-item__link"  href={item.href} aria-label={`link ${item.name}`}>
                 <Icon class="social-icon" name={item.name} width={58} height={58} />
             </a>
         </li>

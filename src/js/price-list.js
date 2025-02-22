@@ -80,8 +80,6 @@
       }
 /* accordion */
       const acc = document.getElementsByClassName("price-box__title");
-console.log(acc);
-
 for (let i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function() {
     console.log ("нажал");
