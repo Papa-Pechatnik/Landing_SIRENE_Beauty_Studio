@@ -10,14 +10,17 @@
 <style>
   
   .price-title {
-    margin-bottom: 28px;
+    margin-bottom: 25px;
   }
   .price-box {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(4, minmax(310px, 340px));
-    grid-template-rows: repeat(3, auto);
+    grid-template-columns: repeat(auto-fill, 1fr);
+    /* grid-template-columns: repeat(4, minmax(310px));
+    grid-auto-rows: repeat(3, auto); */
+    grid-auto-rows: auto;
     justify-content: space-between;
+    /* align-items: stretch; */
     row-gap: 40px;
     column-gap: 20px;
     grid-template-areas:
@@ -27,20 +30,22 @@
   }
   @media screen and (max-width: 1440px) {
     .price-box {
-      grid-template-columns: repeat(3, minmax(310px, 340px));
-      grid-template-rows: repeat(4, auto);
+      /* grid-template-columns: repeat(3, minmax(310px));
+      grid-template-rows: repeat(4, auto); */
+      justify-content: space-around;
       grid-template-areas:
         "box-id0 box-id1 box-id3"
         "box-id0 box-id1 box-id2"
         "box-id4 box-id5 box-id6"
         "box-id7 box-id8 .";
     }
+
   }
 
   @media screen and (max-width: 1040px) {
     .price-box {
-      grid-template-columns: repeat(2, minmax(310px, 340px));
-      grid-template-rows: repeat(5, auto);
+      /* grid-template-columns: repeat(2, minmax(310px));
+      grid-template-rows: repeat(5, auto); */
       justify-content: space-around;
       grid-template-areas:
         "box-id0 box-id1"
@@ -53,11 +58,19 @@
 
   @media screen and (max-width: 700px) {
     .price-box {
-      grid-template-columns: repeat(1, minmax(310px, 340px));
-      grid-template-rows: repeat(9, auto);
+      /* grid-template-columns: repeat(1, minmax(310px));
+      grid-template-rows: repeat(9, auto); */
       row-gap: 0;
       justify-content: center;
       grid-template-areas: "box-id0" "box-id1" "box-id2" "box-id3" "box-id4" "box-id5" "box-id6" "box-id7" "box-id8";
     }
   }
+
+  @media screen and (max-width: 567px) {
+      .price-title {
+    margin-bottom: 0;
+  }
+  }
+
+
 </style>

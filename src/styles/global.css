@@ -116,8 +116,9 @@ h2, p {
 .box-id8 { grid-area: box-id8; }
 
 .price-box__item {
-   min-width: 310px;
-   margin-top: clamp(0rem, -3.3333rem + 9.2593vw, 5rem);
+max-width: 310px;
+min-width: 288px;
+   margin-top: clamp(0rem, -3.247rem + 9.164vw, 5rem)
  }
 
  .box-id2 {
